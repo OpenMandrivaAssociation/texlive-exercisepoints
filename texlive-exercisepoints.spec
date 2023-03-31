@@ -1,6 +1,6 @@
 Name:		texlive-exercisepoints
 Version:	49590
-Release:	1
+Release:	2
 Summary:	A LaTeX package to count exercises and points
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exercisepoints
