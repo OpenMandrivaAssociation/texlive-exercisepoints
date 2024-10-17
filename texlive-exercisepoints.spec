@@ -3,7 +3,7 @@ Version:	49590
 Release:	2
 Summary:	A LaTeX package to count exercises and points
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exercisepoints
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exercisepoints
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.doc.r%{version}.tar.xz
