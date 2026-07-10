@@ -1,41 +1,27 @@
-Name:		texlive-exercisepoints
-Version:	49590
-Release:	2
+%global tl_name exercisepoints
+%global tl_revision 49590
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2.3
+Release:	%{tl_revision}.1
 Summary:	A LaTeX package to count exercises and points
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exercisepoints
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisepoints.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package can be used to facilitate exercise counting and
-exercise point counting in a LaTeX-document. It counts the
-number of exercises and it sums all the points of the exercises
-in a document. Especially for exams it is also common to have
-an overview of all exercises and their maximal points. This is
-also supported by this package by providing a macro to retrieve
-the points of each exercise.
+The package can be used to facilitate exercise counting and exercise
+point counting in a LaTeX-document. It counts the number of exercises
+and it sums all the points of the exercises in a document. Especially
+for exams it is also common to have an overview of all exercises and
+their maximal points. This is also supported by this package by
+providing a macro to retrieve the points of each exercise.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/exercisepoints
-%doc %{_texmfdistdir}/doc/latex/exercisepoints
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
